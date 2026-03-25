@@ -2,7 +2,7 @@
 name: code-flow
 description: >
   Enforces a Research -> Plan -> Annotate -> Todo List -> Implement -> Feedback
-  pipeline that separates thinking from typing. Use when the user types /workflow,
+  pipeline that separates thinking from typing. Use when the user types /code-flow,
   or asks for multi-file changes, architectural refactors, new features, performance
   work, or any task that could conflict with existing codebase patterns.
   DO NOT use for: quick questions, explaining code, single-line fixes, or tasks
