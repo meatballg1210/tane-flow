@@ -37,10 +37,8 @@ Each phase is also available as a standalone command:
 
 - `/tane-flow:research` — Research phase only
 - `/tane-flow:plan` — Plan phase only
-- `/tane-flow:annotate` — Annotation cycle only
 - `/tane-flow:todo` — Todo list only
 - `/tane-flow:implement` — Implementation only
-- `/tane-flow:feedback` — Feedback only
 
 Use these to enter a specific phase directly when you don't need the full workflow.
 
