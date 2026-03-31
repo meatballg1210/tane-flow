@@ -1,11 +1,13 @@
 ---
-name: code-flow
+name: tane-flow
 description: >
   Enforces a Research -> Plan -> Annotate -> Todo List -> Implement -> Feedback
-  pipeline that separates thinking from typing. Use when the user types /code-flow,
-  or asks to create a production-grade project from scratch, multi-file changes,
-  architectural refactors, new features, performance work, or any task that could
-  conflict with existing codebase patterns.
+  pipeline that separates thinking from typing. Use when the user explicitly types
+  /tane-flow. For tasks that would benefit from this workflow (production-grade
+  projects from scratch, multi-file changes, architectural refactors, new features,
+  performance work, or any task that could conflict with existing codebase patterns),
+  ASK the user first whether they want to use the tane-flow workflow before
+  activating it. Do NOT activate automatically.
   DO NOT use for: quick questions, explaining code, single-line fixes, or tasks
   where the user has already provided the exact code to write.
 ---
@@ -52,7 +54,9 @@ Write a detailed implementation plan in `plan.md`. Base every decision on what y
 - Considerations and trade-offs
 - How the plan builds on existing patterns found during research
 
-When a similar feature or pattern already exists in the codebase, reference it as the implementation model. Point to specific files and functions. The agent performs dramatically better with a concrete reference than designing from scratch.
+When a similar feature or pattern already exists in the codebase, reference it as the implementation model. Point to specific files and functions. When the user provides an external reference — a GitHub link, open-source snippet, or documentation — treat it as an implementation model alongside codebase patterns. The agent performs dramatically better with a concrete reference than designing from scratch.
+
+See `references/examples.md` § "Reference Implementation Trick" for examples.
 
 **STOP.** Tell the user: "Plan is in `plan.md` — please review and add inline notes." Do NOT proceed until the user responds.
 
@@ -112,7 +116,7 @@ Rules:
 
 ## Phase 6: Feedback
 
-Once implementation begins, accept terse corrections. Reference existing code when correcting — most features are variations on existing patterns.
+Once implementation begins, accept terse corrections. Reference existing code when correcting — most features are variations on existing patterns. For visual or frontend work, the user may attach screenshots and give brief directives ("wider", "still cropped", "there's a 2px gap") — act on these directly.
 
 If you've applied 3+ corrections to the same area without converging:
 1. Revert the problematic changes
@@ -121,7 +125,7 @@ If you've applied 3+ corrections to the same area without converging:
 
 Do not patch endlessly. Reverting and re-implementing from the plan is faster and produces cleaner results than incremental fixes on a bad direction.
 
-See `references/examples.md` for feedback and correction patterns.
+See `references/examples.md` for feedback, correction, and steering patterns.
 
 ---
 
@@ -132,3 +136,6 @@ See `references/examples.md` for feedback and correction patterns.
 3. **Annotation injects the user's judgment** about the broader system, product direction, engineering culture, and trade-offs.
 4. **Reference existing code.** Most features are variations on existing patterns. Point to them instead of designing from scratch.
 5. **Implementation should be boring.** The creative work happened during research and annotation.
+6. **Stay in one session.** Keep research, planning, and implementation in one continuous conversation. The plan file survives context compaction in full fidelity, and the agent builds cumulative understanding throughout the session.
+
+See `references/philosophy.md` for rationale and anti-patterns.
