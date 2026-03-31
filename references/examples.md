@@ -7,12 +7,12 @@ Use emphatic, depth-signaling language. Without these words, the agent will skim
 ```text
 read this folder in depth, understand how it works deeply, what it does and all
 its specificities. when that's done, write a detailed report of your learnings
-and findings in research.md
+and findings in research-<slug>.md
 ```
 
 ```text
 study the notification system in great detail, understand the intricacies of it
-and write a detailed research.md document with everything there is to know about
+and write a detailed research-<slug>.md document with everything there is to know about
 how notifications work
 ```
 
@@ -21,7 +21,7 @@ go through the task scheduling flow, understand it deeply and look for potential
 bugs. there definitely are bugs in the system as it sometimes runs tasks that
 should have been cancelled. keep researching the flow until you find all the bugs,
 don't stop until all the bugs are found. when you're done, write a detailed report
-of your findings in research.md
+of your findings in research-<slug>.md
 ```
 
 Key language: "deeply", "in great detail", "intricacies", "go through everything", "don't stop until".
@@ -30,13 +30,13 @@ Key language: "deeply", "in great detail", "intricacies", "go through everything
 
 ```text
 I want to build a new feature <name and description> that extends the system to
-perform <business outcome>. write a detailed plan.md document outlining how to
+perform <business outcome>. write a detailed plan-<slug>.md document outlining how to
 implement this. include code snippets
 ```
 
 ```text
 the list endpoint should support cursor-based pagination instead of offset. write
-a detailed plan.md for how to achieve this. read source files before suggesting
+a detailed plan-<slug>.md for how to achieve this. read source files before suggesting
 changes, base the plan on the actual codebase
 ```
 
@@ -44,7 +44,7 @@ changes, base the plan on the actual codebase
 
 For well-contained features where a good implementation exists elsewhere in the codebase or in open source, provide it as a reference:
 
-> "This is how they do sortable IDs. Write a plan.md explaining how we can adopt a similar approach."
+> "This is how they do sortable IDs. Write a plan-<slug>.md explaining how we can adopt a similar approach."
 
 > "The users table already has exactly the pagination pattern we need. Use it as the model for the orders table."
 
@@ -63,7 +63,7 @@ The explicit "don't implement yet" guard is essential. Without it, the agent may
 
 ### Typical user annotations
 
-These are inline notes users add directly into plan.md:
+These are inline notes users add directly into `plan-<slug>.md`:
 
 - "use drizzle:generate for migrations, not raw SQL"
 - "no -- this should be a PATCH, not a PUT"
