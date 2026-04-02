@@ -31,19 +31,6 @@ At the start of each workflow, derive a short, descriptive slug from the user's 
 
 This keeps artifacts from different tasks separate and traceable. The slug should be lowercase, hyphen-separated, and 2-4 words max. Confirm the slug with the user before writing the first file.
 
-## Individual Phase Commands
-
-Each phase is also available as a standalone command:
-
-- `/tane-flow:research` — Research phase only
-- `/tane-flow:plan` — Plan phase only
-- `/tane-flow:todo` — Todo list only
-- `/tane-flow:implement` — Implementation only
-
-Use these to enter a specific phase directly when you don't need the full workflow.
-
----
-
 ## Phase 1: Research
 
 Every task starts with deep reading. Understand the relevant parts of the codebase thoroughly before doing anything else.
